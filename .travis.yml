@@ -1,0 +1,12 @@
+language: node_js
+
+node_js:
+  - 6
+
+services:
+  - docker
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    make deploy
+    fi
